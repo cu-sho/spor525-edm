@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auckland FC | Blue Together EDM</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background: #08111f;
+        background-image:
+          radial-gradient(
+            circle at top left,
+            rgba(31, 74, 255, 0.38),
+            transparent 34%
+          ),
+          radial-gradient(
+            circle at top right,
+            rgba(233, 198, 110, 0.16),
+            transparent 28%
+          ),
+          linear-gradient(180deg, #08111f 0%, #10213d 48%, #08111f 100%);
+        color: #f6f8fc;
+        font-family: "Trebuchet MS", "Segoe UI", Helvetica, Arial, sans-serif;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+
+      table {
+        border-spacing: 0;
+        border-collapse: collapse;
+      }
+
+      img {
+        border: 0;
+        display: block;
+        line-height: 100%;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .outer {
+        width: 100%;
+        background: transparent;
+      }
+
+      .shell {
+        width: 100%;
+        max-width: 950px;
+        margin: 0 auto;
+      }
+
+      .panel {
+        background: rgba(6, 13, 26, 0.92);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+      }
+
+      .inner {
+        padding: 0 34px 34px;
+      }
+
+      .header {
+        padding: 24px 34px 18px;
+        background:
+          linear-gradient(90deg, rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0)),
+          linear-gradient(120deg, #0b1730 0%, #143582 54%, #0b1730 100%);
+      }
+
+      .eyebrow {
+        color: #e9c66e;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+      }
+
+      .headline {
+        margin: 0;
+        color: #ffffff;
+        font-size: 38px;
+        line-height: 1.04;
+        font-weight: 800;
+        letter-spacing: -0.8px;
+      }
+
+      .subhead {
+        margin: 16px 0 0;
+        color: #dbe5ff;
+        font-size: 17px;
+        line-height: 1.6;
+      }
+
+      .hero-card {
+        position: relative;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(17, 37, 86, 0.96),
+            rgba(5, 12, 23, 0.98)
+          ),
+          #0d1731;
+        /* border: 1px solid rgba(123, 157, 255, 0.2); */
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .hero-layout {
+        position: relative;
+        min-height: 430px;
+      }
+
+      .hero-copy {
+        position: relative;
+        z-index: 2;
+        width: 58%;
+        padding: 36px 270px 36px 34px;
+      }
+
+      .hero-photo-wrap {
+        position: absolute;
+        right: -180px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 600px;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .hero-photo {
+        width: 100%;
+        max-width: 750px;
+      }
+
+      .hero-kicker {
+        display: inline-block;
+        margin-bottom: 16px;
+        padding: 9px 14px;
+        color: #dbe5ff;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.9px;
+        text-transform: uppercase;
+      }
+
+      .copy {
+        color: #c9d4eb;
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .copy p {
+        margin: 0 0 16px;
+      }
+
+      .cta {
+        display: inline-block;
+        padding: 15px 28px;
+        background: linear-gradient(135deg, #f0cc72 0%, #dbb04d 100%);
+        border-radius: 999px;
+        color: #08111f;
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        box-shadow: 0 10px 24px rgba(223, 183, 82, 0.28);
+      }
+
+      .cta-secondary {
+        display: inline-block;
+        margin-left: 12px;
+        padding: 15px 24px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 999px;
+        color: #eff4ff;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .section-title {
+        margin: 0 0 10px;
+        color: #ffffff;
+        font-size: 28px;
+        line-height: 1.15;
+        font-weight: 800;
+        letter-spacing: -0.4px;
+      }
+
+      .section-label {
+        margin: 0 0 12px;
+        color: #80a5ff;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .glass-card {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.055),
+          rgba(255, 255, 255, 0.02)
+        );
+        /* border: 1px solid rgba(128, 165, 255, 0.17); */
+        border-radius: 20px;
+        overflow: hidden;
+      }
+
+      .stats-box {
+        background: linear-gradient(
+          180deg,
+          rgba(240, 204, 114, 0.11),
+          rgba(255, 255, 255, 0.03)
+        );
+        border: 1px solid rgba(240, 204, 114, 0.26);
+        border-radius: 20px;
+        padding: 20px;
+      }
+
+      .stats-box h3 {
+        margin: 0 0 10px;
+        color: #ffffff;
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .stats-box p {
+        margin: 0;
+        color: #d5ddf2;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .goal-list,
+      .audience-list {
+        margin: 0;
+        padding: 0 0 0 18px;
+        color: #d5ddf2;
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .goal-list li,
+      .audience-list li {
+        margin-bottom: 10px;
+      }
+
+      .journey-card {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.08),
+          rgba(255, 255, 255, 0.03)
+        );
+        border: 1px solid rgba(133, 167, 255, 0.22);
+        border-radius: 20px;
+        padding: 20px;
+        height: 100%;
+      }
+
+      .step-pill {
+        display: inline-block;
+        margin-bottom: 16px;
+        padding: 7px 12px;
+        border-radius: 999px;
+        background: rgba(24, 61, 156, 0.62);
+        color: #e8efff;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .journey-card h3 {
+        margin: 0 0 10px;
+        color: #ffffff;
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .journey-card p {
+        margin: 0;
+        color: #d0d9ef;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .highlight-bar {
+        background:
+          linear-gradient(
+            90deg,
+            rgba(240, 204, 114, 0.2),
+            rgba(83, 127, 255, 0.2)
+          ),
+          rgba(8, 17, 31, 0.88);
+        /* border: 1px solid rgba(240, 204, 114, 0.22); */
+        border-radius: 20px;
+        padding: 22px 24px;
+      }
+
+      .highlight-bar h3 {
+        margin: 0 0 8px;
+        color: #ffffff;
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
+      .highlight-bar p {
+        margin: 0;
+        color: #dbe5ff;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .photo-note {
+        padding: 24px 24px 26px;
+      }
+
+      .footer-copy {
+        color: #9fb2d8;
+        font-size: 12px;
+        line-height: 1.7;
+        text-align: center;
+      }
+
+      @media screen and (max-width: 640px) {
+        .inner,
+        .header {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+
+        .hero-copy,
+        .photo-note {
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+
+        .hero-layout {
+          min-height: 0 !important;
+        }
+
+        .hero-copy {
+          width: auto !important;
+          padding-top: 26px !important;
+          padding-bottom: 0 !important;
+        }
+
+        .headline {
+          font-size: 30px !important;
+        }
+
+        .section-title {
+          font-size: 24px !important;
+        }
+
+        .stack,
+        .stack td {
+          display: block !important;
+          width: 100% !important;
+        }
+
+        .stack td {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          padding-bottom: 18px !important;
+        }
+
+        .stack td:last-child {
+          padding-bottom: 0 !important;
+        }
+
+        .hero-photo-wrap {
+          position: relative !important;
+          right: auto !important;
+          bottom: auto !important;
+          width: 100% !important;
+          max-width: 320px !important;
+          margin: 0 auto !important;
+          padding: 0 20px 0 !important;
+        }
+
+        .hero-photo {
+          margin: 0 auto;
+          max-width: 320px !important;
+        }
+
+        .cta-secondary {
+          margin: 12px 0 0 !important;
+        }
+
+        .mobile-spacer {
+          height: 18px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div style="display: none; max-height: 0; overflow: hidden; opacity: 0">
+      Blue Together - Bring Your Crew is Auckland FC's supporter initiative to
+      bring casual fans back, build repeat attendance and keep matchday
+      electric.
+    </div>
+
+    <table role="presentation" class="outer" width="100%">
+      <tr>
+        <td align="center" style="padding: 28px 14px">
+          <table role="presentation" class="shell" width="100%">
+            <tr>
+              <td class="panel">
+                <table role="presentation" width="100%">
+                  <tr>
+                    <td class="header">
+                      <table role="presentation" width="100%">
+                        <tr>
+                          <td align="left" valign="middle">
+                            <img
+                              src="assets/afc-logo.png"
+                              alt="Auckland FC logo"
+                              width="78"
+                              style="width: 78px; max-width: 78px"
+                            />
+                          </td>
+                          <td align="right" valign="middle" class="eyebrow">
+                            Supporter EDM | 2026
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="inner" style="padding-top: 24px">
+                      <table role="presentation" width="100%" class="hero-card">
+                        <tr>
+                          <td>
+                            <div class="hero-layout">
+                              <div class="hero-copy">
+                                <div class="hero-kicker">
+                                  Auckland Football Club
+                                </div>
+                                <h1 class="headline">
+                                  Auckland is Electric.<br />Let's Keep It That
+                                  Way.
+                                </h1>
+                                <p class="subhead">
+                                  That is why Auckland FC is proud to launch
+                                  <strong
+                                    >"Blue Together - Bring Your Crew"</strong
+                                  >, a new supporter initiative designed to
+                                  encourage fans to stay connected beyond our
+                                  inaugural season and keep the stadium
+                                  atmosphere electric.
+                                </p>
+                                <table
+                                  role="presentation"
+                                  class="stack"
+                                  style="margin-top: 24px"
+                                >
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="https://www.aucklandfc.co.nz/"
+                                        class="cta"
+                                        >Join The Port</a
+                                      >
+                                    </td>
+                                    <td>
+                                      <a
+                                        href="https://www.aucklandfc.co.nz/"
+                                        class="cta-secondary"
+                                        >Bring Your Crew Back</a
+                                      >
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                              <div class="hero-photo-wrap">
+                                <img
+                                  src="assets/hiroki-photo.png"
+                                  alt="Auckland FC player Hiroki Sakai in club kit"
+                                  class="hero-photo"
+                                  width="750"
+                                  style="width: 100%; max-width: 750px"
+                                />
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <table
+                        role="presentation"
+                        width="100%"
+                        style="margin-top: 26px"
+                      >
+                        <tr class="stack">
+                          <td
+                            width="57%"
+                            valign="top"
+                            style="padding-right: 12px"
+                          >
+                            <div class="glass-card">
+                              <div class="photo-note">
+                                <p class="section-label">
+                                  Why This Initiative Matters
+                                </p>
+                                <h2 class="section-title">
+                                  Keep the city coming back for more.
+                                </h2>
+                                <div class="copy">
+                                  <p>
+                                    Last season, Auckland FC brought the city
+                                    together through unforgettable matchdays,
+                                    record-breaking crowds and an atmosphere
+                                    unlike anything New Zealand football had
+                                    seen before. Together, supporters helped
+                                    create something special - a club built on
+                                    passion, energy and connection.
+                                  </p>
+                                  <p>
+                                    However, one of the biggest challenges
+                                    facing Auckland FC is maintaining supporter
+                                    attendance once the excitement of a new club
+                                    begins to fade. Great clubs are not built
+                                    through one successful season alone; they
+                                    are built through loyal supporters who
+                                    continue showing up, season after season.
+                                  </p>
+                                  <p>
+                                    We understand that life gets busy and
+                                    attending matches can sometimes become a
+                                    "once in a while" activity. Whether it is
+                                    work, study, family commitments or simply
+                                    getting out of the habit, it can be easy to
+                                    miss the next game. Our goal is simple: make
+                                    Auckland FC matchdays something worth coming
+                                    back to - with your mates, family or
+                                    favourite football crew.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td
+                            width="43%"
+                            valign="bottom"
+                            style="padding-left: 12px"
+                          >
+                            <div class="stats-box">
+                              <h3>Blue Together in one line</h3>
+                              <p>
+                                Attend matches, bring your crew and unlock
+                                exclusive rewards that make returning to
+                                Auckland FC feel social, rewarding and
+                                unmissable.
+                              </p>
+                            </div>
+                            <div
+                              class="mobile-spacer"
+                              style="height: 16px"
+                            ></div>
+                            <div class="glass-card">
+                              <img
+                                src="assets/auckland-fc1.jpg"
+                                alt="Auckland FC match action during a packed fixture"
+                                style="width: 100%"
+                              />
+                              <div class="photo-note" style="padding-top: 18px">
+                                <p class="copy" style="margin: 0">
+                                  The initiative is designed to turn the
+                                  atmosphere people first came for into a habit
+                                  they want to keep repeating all season.
+                                </p>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <table
+                        role="presentation"
+                        width="100%"
+                        style="margin-top: 26px"
+                      >
+                        <tr class="stack">
+                          <td
+                            width="47%"
+                            valign="top"
+                            style="padding-right: 12px"
+                          >
+                            <div class="glass-card">
+                              <div class="photo-note">
+                                <p class="section-label">Who Is This For?</p>
+                                <div class="copy">
+                                  <p>
+                                    Blue Together has been designed for casual
+                                    Auckland FC supporters aged 18-40 who
+                                    attended one or more matches during our
+                                    inaugural season but are not regular
+                                    attendees or season members.
+                                  </p>
+                                  <p>
+                                    Whether you came for the derby atmosphere, a
+                                    fun social night out or to experience
+                                    Auckland football for the very first time,
+                                    we want to welcome you back and help turn
+                                    one great matchday into many more
+                                    unforgettable experiences.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td
+                            width="53%"
+                            valign="top"
+                            style="padding-left: 12px"
+                          >
+                            <div class="glass-card">
+                              <div class="photo-note">
+                                <p class="section-label">
+                                  What Are We Trying to Achieve?
+                                </p>
+                                <ol class="goal-list">
+                                  <li>
+                                    Increase repeat match attendance by
+                                    encouraging casual supporters to return more
+                                    regularly throughout the season.
+                                  </li>
+                                  <li>
+                                    Strengthen supporter connection by turning
+                                    football into a shared social experience
+                                    with friends, family and the wider Auckland
+                                    FC community.
+                                  </li>
+                                  <li>
+                                    Maintain Auckland FC's electric matchday
+                                    atmosphere, supporting the long-term success
+                                    of the club while continuing to create
+                                    unforgettable experiences for fans.
+                                  </li>
+                                </ol>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <table
+                        role="presentation"
+                        width="100%"
+                        style="margin-top: 26px"
+                      >
+                        <tr>
+                          <td>
+                            <div class="highlight-bar">
+                              <h3>How Does Blue Together Work?</h3>
+                              <p>
+                                It is simple - attend matches, bring your crew
+                                and unlock exclusive rewards.
+                              </p>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <table
+                        role="presentation"
+                        width="100%"
+                        style="margin-top: 18px"
+                      >
+                        <tr class="stack">
+                          <td
+                            width="33.33%"
+                            valign="top"
+                            style="padding-right: 10px"
+                          >
+                            <div class="journey-card">
+                              <div class="step-pill">Match 1</div>
+                              <h3>Bring a friend</h3>
+                              <p>
+                                Bring a friend and receive 20% off your second
+                                ticket, making it easier to share the Auckland
+                                FC experience with someone new.
+                              </p>
+                            </div>
+                          </td>
+                          <td
+                            width="33.33%"
+                            valign="top"
+                            style="padding-left: 5px; padding-right: 5px"
+                          >
+                            <div class="journey-card">
+                              <div class="step-pill">Match 2</div>
+                              <h3>Come back with your crew</h3>
+                              <p>
+                                Attend another match with family or friends and
+                                unlock an exclusive food and drink voucher to
+                                enjoy during matchday.
+                              </p>
+                            </div>
+                          </td>
+                          <td
+                            width="33.33%"
+                            valign="top"
+                            style="padding-left: 10px"
+                          >
+                            <div class="journey-card">
+                              <div class="step-pill">Match 3</div>
+                              <h3>Unlock the VIP moment</h3>
+                              <p>
+                                Return for a third match and receive a
+                                limited-edition Auckland FC supporter reward,
+                                plus entry into an exclusive VIP matchday prize
+                                draw.
+                              </p>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <table
+                        role="presentation"
+                        width="100%"
+                        style="margin-top: 26px"
+                      >
+                        <tr class="stack">
+                          <td
+                            width="52%"
+                            valign="top"
+                            style="padding-right: 12px"
+                          >
+                            <div class="glass-card">
+                              <img
+                                src="assets/auckland-fc2.jpg"
+                                alt="Auckland FC supporters celebrating in the stands"
+                                style="width: 100%"
+                              />
+                              <div class="photo-note">
+                                <p
+                                  class="section-label"
+                                  style="padding-top: 9.5px"
+                                >
+                                  Matchday Sharing
+                                </p>
+                                <div class="copy">
+                                  <p>
+                                    Supporters can also share their matchday
+                                    moments online using
+                                    <strong>#BlueTogether</strong> for the
+                                    chance to win upgraded seats, exclusive fan
+                                    experiences and additional Auckland FC
+                                    prizes throughout the season.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </td>
+                          <td
+                            width="48%"
+                            valign="top"
+                            style="padding-left: 12px"
+                          >
+                            <div class="glass-card">
+                              <div class="photo-note">
+                                <p class="section-label">
+                                  The Behavioural Objective
+                                </p>
+                                <h2
+                                  class="section-title"
+                                  style="font-size: 24px"
+                                >
+                                  Make returning feel natural, social and worth
+                                  planning.
+                                </h2>
+                                <div class="copy">
+                                  <p>
+                                    This EDM is designed to guide casual
+                                    supporters from remembering the atmosphere
+                                    they loved, to seeing a clear three-match
+                                    pathway, to taking the next action by
+                                    planning another Auckland FC matchday with
+                                    people they know.
+                                  </p>
+                                  <p>
+                                    At Auckland FC, football is about more than
+                                    ninety minutes on the pitch - it is about
+                                    belonging to something bigger. Together, we
+                                    built the excitement of our inaugural
+                                    season. Now, let's build something lasting.
+                                  </p>
+                                </div>
+                                <table
+                                  role="presentation"
+                                  style="margin-top: 20px"
+                                >
+                                  <tr>
+                                    <td>
+                                      <a
+                                        href="https://www.aucklandfc.co.nz/"
+                                        class="cta"
+                                        >Bring Your Crew to the Next Game</a
+                                      >
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+
+                      <table
+                        role="presentation"
+                        width="100%"
+                        style="margin-top: 26px"
+                      >
+                        <tr>
+                          <td class="footer-copy">
+                            Auckland FC | Blue Together - Bring Your Crew
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
