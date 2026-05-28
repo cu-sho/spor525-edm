@@ -107,7 +107,6 @@
             rgba(5, 12, 23, 0.98)
           ),
           #0d1731;
-        /* border: 1px solid rgba(123, 157, 255, 0.2); */
         border-radius: 20px;
         overflow: hidden;
       }
@@ -126,10 +125,10 @@
 
       .hero-photo-wrap {
         position: absolute;
-        right: -180px;
+        right: -250px;
         top: 50%;
         transform: translateY(-50%);
-        width: 600px;
+        max-width: 750px;
         z-index: 1;
         pointer-events: none;
       }
@@ -189,6 +188,7 @@
         letter-spacing: 0.4px;
         text-transform: uppercase;
         background: rgba(255, 255, 255, 0.04);
+        text-align: center;
       }
 
       .section-title {
@@ -215,7 +215,6 @@
           rgba(255, 255, 255, 0.055),
           rgba(255, 255, 255, 0.02)
         );
-        /* border: 1px solid rgba(128, 165, 255, 0.17); */
         border-radius: 20px;
         overflow: hidden;
       }
@@ -306,7 +305,6 @@
             rgba(83, 127, 255, 0.2)
           ),
           rgba(8, 17, 31, 0.88);
-        /* border: 1px solid rgba(240, 204, 114, 0.22); */
         border-radius: 20px;
         padding: 22px 24px;
       }
@@ -336,7 +334,7 @@
         text-align: center;
       }
 
-      @media screen and (max-width: 640px) {
+      @media screen and (max-width: 830px) {
         .inner,
         .header {
           padding-left: 20px !important;
@@ -351,6 +349,7 @@
 
         .hero-layout {
           min-height: 0 !important;
+          max-height: 550px !important;
         }
 
         .hero-copy {
@@ -385,17 +384,17 @@
 
         .hero-photo-wrap {
           position: relative !important;
-          right: auto !important;
-          bottom: auto !important;
+          right: -120px !important;
+          bottom: 20px !important;
           width: 100% !important;
-          max-width: 320px !important;
+          max-width: 600px !important;
           margin: 0 auto !important;
           padding: 0 20px 0 !important;
         }
 
         .hero-photo {
           margin: 0 auto;
-          max-width: 320px !important;
+          max-width: 600px !important;
         }
 
         .cta-secondary {
@@ -404,6 +403,20 @@
 
         .mobile-spacer {
           height: 18px !important;
+        }
+      }
+
+      @media screen and (max-width: 580px) {
+        .hero-photo-wrap {
+          right: -80px !important;
+          bottom: 40px !important;
+        }
+      }
+
+      @media screen and (max-width: 445px) {
+        .hero-photo-wrap {
+          right: -60px !important;
+          bottom: 60px !important;
         }
       }
     </style>
@@ -493,7 +506,6 @@
                                   alt="Auckland FC player Hiroki Sakai in club kit"
                                   class="hero-photo"
                                   width="750"
-                                  style="width: 100%; max-width: 750px"
                                 />
                               </div>
                             </div>
@@ -531,24 +543,23 @@
                                     passion, energy and connection.
                                   </p>
                                   <p>
-                                    However, one of the biggest challenges
-                                    facing Auckland FC is maintaining supporter
-                                    attendance once the excitement of a new club
-                                    begins to fade. Great clubs are not built
-                                    through one successful season alone; they
-                                    are built through loyal supporters who
-                                    continue showing up, season after season.
+                                    However, Auckland FC's key challenge is
+                                    keeping supporters engaged after the
+                                    excitement of the first season fades. Great
+                                    clubs are not built through one successful
+                                    season alone; they are built through loyal
+                                    supporters who continue showing up, season
+                                    after season.
                                   </p>
                                   <p>
-                                    We understand that life gets busy and
-                                    attending matches can sometimes become a
-                                    "once in a while" activity. Whether it is
-                                    work, study, family commitments or simply
-                                    getting out of the habit, it can be easy to
-                                    miss the next game. Our goal is simple: make
-                                    Auckland FC matchdays something worth coming
-                                    back to - with your mates, family or
-                                    favourite football crew.
+                                    We understand that life gets busy, and
+                                    matches can become a 'once in a while'
+                                    activity. Work, study, family commitments or
+                                    routine changes can make it easy to miss the
+                                    next game. Our goal is simple: make Auckland
+                                    FC matchdays something worth coming back to
+                                    - with your mates, family or favourite
+                                    football crew.
                                   </p>
                                 </div>
                               </div>
@@ -606,11 +617,10 @@
                                 <p class="section-label">Who Is This For?</p>
                                 <div class="copy">
                                   <p>
-                                    Blue Together has been designed for casual
+                                    Blue Together is designed for casual
                                     Auckland FC supporters aged 18-40 who
-                                    attended one or more matches during our
-                                    inaugural season but are not regular
-                                    attendees or season members.
+                                    attended at least one match last season but
+                                    are not regular attendees or season members.
                                   </p>
                                   <p>
                                     Whether you came for the derby atmosphere, a
@@ -750,12 +760,7 @@
                                 style="width: 100%"
                               />
                               <div class="photo-note">
-                                <p
-                                  class="section-label"
-                                  style="padding-top: 9.5px"
-                                >
-                                  Matchday Sharing
-                                </p>
+                                <p class="section-label">Matchday Sharing</p>
                                 <div class="copy">
                                   <p>
                                     Supporters can also share their matchday
@@ -788,19 +793,16 @@
                                 </h2>
                                 <div class="copy">
                                   <p>
-                                    This EDM is designed to guide casual
-                                    supporters from remembering the atmosphere
-                                    they loved, to seeing a clear three-match
-                                    pathway, to taking the next action by
-                                    planning another Auckland FC matchday with
-                                    people they know.
+                                    This EDM reminds casual supporters of the
+                                    atmosphere they loved and encourages them to
+                                    plan another matchday with their crew.
                                   </p>
                                   <p>
-                                    At Auckland FC, football is about more than
-                                    ninety minutes on the pitch - it is about
-                                    belonging to something bigger. Together, we
-                                    built the excitement of our inaugural
-                                    season. Now, let's build something lasting.
+                                    At Auckland FC, football is around ninety
+                                    minutes on the pitch. It is about belonging
+                                    to something bigger. Together, we built the
+                                    excitement of our inaugural season. Now,
+                                    let's build something lasting.
                                   </p>
                                 </div>
                                 <table
